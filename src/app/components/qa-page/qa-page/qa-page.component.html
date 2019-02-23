@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="header">
+  <span>Workplace Assistant</span>
+</mat-toolbar>
+
+<div class="cont">
+  <h1>Question: {{question}}</h1>
+  <br>
+  <br>
+  <h1>Answers: </h1>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let answer of answers">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{answer.answer_text.substring(0,15) + "..."}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Posted: {{answer.timestamp}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{answer.answer_text}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div class="row">
+  <mat-toolbar color="primary" class="footer"></mat-toolbar>
+</div>
